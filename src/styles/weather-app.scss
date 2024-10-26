@@ -37,3 +37,97 @@ body {
 
     padding: 2.5rem;
 }
+
+.search__box {
+    position: inherit;
+
+    display: flex;
+    align-items: center;
+
+    height: 3rem;
+
+    .fa-location-dot {
+        z-index: 1;
+        font-size: 1.3rem;
+        margin-left: .8rem;
+    }
+
+    .search__div {
+        position: absolute;
+
+        display: inherit;
+        align-items: center;
+        flex-direction: column;
+
+        width: 100%;
+        height: 100%;
+
+        border: 2px solid rgb(255, 255, 255, .5);
+        border-radius: 10px;
+
+        background: rgb(0, 0, 0, .2);
+
+        .search__input {
+            border: none;
+    
+            font-size: 18px;
+            letter-spacing: .9px;
+    
+            width: 100%;
+            height: 100%;
+    
+            caret-color: $main-color;
+            color: $main-color;
+            background: none;
+
+            padding-left: 3rem;
+        }
+    }
+    
+    .search__input::placeholder {
+        color: rgb(255, 255, 255, .5);
+    }
+
+    .search__input:focus {
+        outline: none;
+    }
+
+
+    .fa-magnifying-glass {
+        position: absolute;
+        right: .8rem;
+
+        font-size: 1.2rem;
+        color: $main-color;
+    }
+
+    .fa-magnifying-glass.hide {
+        display: none;
+    }
+
+    .clear__button {
+        position: absolute;
+        right: .4rem;
+
+        width: 2rem;
+        height: 2rem;
+
+        border: none;
+        border-radius: 50%;
+        background: none;
+
+        cursor: pointer;
+
+        .fa-x {
+            color: rgb(255, 255, 255, .7);
+        }
+    }
+
+    .clear__button:hover {
+        background: rgb(255, 255, 255, .2);
+    }
+
+    .clear__button.hide {
+        display: none;
+    }
+}
