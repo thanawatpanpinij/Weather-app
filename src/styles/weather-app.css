@@ -97,4 +97,62 @@ body {
   display: none;
 }
 
+.weather__box {
+  margin-bottom: 2rem;
+}
+.weather__box .weather__img {
+  display: block;
+  margin: 0 auto;
+}
+.weather__box .error__image {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+}
+.weather__box .weather__temperature {
+  font-size: 32px;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+.weather__box .country__info {
+  margin-bottom: 0.5rem;
+}
+.weather__box .country__info span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.weather__box .weather__description {
+  font-style: italic;
+}
+.weather__box .center {
+  text-align: center;
+}
+.weather__box .weather__img.hide,
+.weather__box .error__image.hide,
+.weather__box .weather__temperature.hide,
+.weather__box .country.hide,
+.weather__box .weather__description.hide {
+  display: none;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex .fa-solid {
+  font-size: 2.8rem;
+  margin-right: 1rem;
+}
+.flex .humidity, .flex .wind {
+  font-size: 1.2rem;
+}
+.flex div p:first-child {
+  margin-bottom: 5px;
+}
+
+.flex.hide {
+  display: none;
+}
+
 /*# sourceMappingURL=weather-app.css.map */

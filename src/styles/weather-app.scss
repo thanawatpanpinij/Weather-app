@@ -131,3 +131,73 @@ body {
         display: none;
     }
 }
+
+.weather__box {
+    margin-bottom: 2rem;
+
+    .weather__img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .error__image {
+        display: block;
+        margin: 0 auto;
+        width: 300px;
+    }
+
+    .weather__temperature {
+        font-size: 32px;
+        font-weight: bolder;
+
+        margin-bottom: 1rem;
+    }
+
+    .country__info {
+        margin-bottom: .5rem;
+
+        span {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    }
+
+    .weather__description {
+        font-style: italic;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .weather__img.hide,
+    .error__image.hide,
+    .weather__temperature.hide,
+    .country.hide,
+    .weather__description.hide {
+        display: none;
+    }
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .fa-solid {
+        font-size: 2.8rem;
+        margin-right: 1rem;
+    }
+
+    .humidity, .wind {
+        font-size: 1.2rem;
+    }
+
+    div p:first-child {
+        margin-bottom: 5px; 
+    }
+}
+
+.flex.hide {
+    display: none;
+}
