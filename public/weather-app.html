@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="../src/styles/weather-app.css">
+</head>
+<body>
+    <div class="card">
+        <div class="search__box">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="search__div">
+                <input type="text" class="search__input" placeholder="Enter your city">
+            </div>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <button class="clear__button hide" aria-label="clear your text">
+                <i class="fa-solid fa-x"></i>
+            </button>
+        </div>
+        <div class="results__box">
+            <ul class="results__ul">
+                
+            </ul>
+        </div>
+        <div class="weather__box">
+            <img src="" alt="" class="weather__img">
+            <img src="../src/assets/images/404-error.webp" alt="city not found image" class="error__image hide">
+            <p class="weather__temperature center"></p>
+            <div class="country__info center">
+                <span class="city"></span>
+                <span class="country"></span>
+            </div>
+            <p class="weather__description center"></p>
+        </div>
+        <div class="footer__info flex">
+            <div class="humidity__box flex">
+                <i class="fa-solid fa-water"></i>
+                <div class="humidity__info">
+                    <p class="humidity"></p>
+                    <p class="humidity__text">ความชื้น</p>
+                </div>
+            </div>
+            <div class="wind__box flex">
+                <i class="fa-solid fa-wind"></i>
+                <div class="wind__info">
+                    <p class="wind"></p>
+                    <p class="wind__text">ความเร็วลม</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/b10522ed86.js" crossorigin="anonymous"></script>
+    <script src="../src/weather-app.js"></script>
+</body>
+</html>
