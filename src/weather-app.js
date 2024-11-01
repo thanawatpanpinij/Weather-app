@@ -1,5 +1,6 @@
 const INPUT_ELEM = document.querySelector(".search__input");
 const IMAGE_ELEM = document.querySelector(".weather__img");
+const ERROR_IMAGE_ELEM = document.querySelector(".error__image");
 const TEMPERATURE_ELEM = document.querySelector(".weather__temperature");
 const CITY_ELEM = document.querySelector(".city");
 const COUNTRY_ELEM = document.querySelector(".country");
@@ -17,6 +18,8 @@ function updateCountry(thCountriesApi, countryCode_In_WeatherApi) {
 }
 
 function updateData(weather, countries) {
+    showHiddenElements();
+
     const countriesCode_In_ThCountriesApi = countries;
     const countriesCode_In_WeatherApi = weather.sys.country;
     const iconApi = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`;
@@ -35,7 +38,7 @@ async function getData(city = "bangkok") {
     const weatherApiKey = "8ffffdc1db5f000776826bad8ba16c25";
     const weatherApi = "https://api.openweathermap.org/data/2.5/weather?units=metric&lang=th";
     const weatherResponse = await fetch(`${weatherApi}&q=${city}&appid=${weatherApiKey}`);
-    if (weatherResponse.status === 404) return;
+    if (weatherResponse.status === 404) return hideElements();
     const weatherData = await weatherResponse.json();
 
     const thCountriesApi = "../src/JSON/country-list-th.json";
@@ -43,6 +46,39 @@ async function getData(city = "bangkok") {
     const countriesData = await countries.json();
 
     updateData(weatherData, countriesData);
+}
+
+function showHiddenElements() {
+    const elementsToShow = [
+        IMAGE_ELEM,
+        TEMPERATURE_ELEM,
+        COUNTRY_ELEM,
+        DESCRIPTION_ELEM,
+        FOOTER_INFO
+    ];
+    
+    elementsToShow.forEach(element => {
+        element.classList.remove("hide");
+    })
+
+    ERROR_IMAGE_ELEM.classList.add("hide");
+}
+
+function hideElements() {
+    const elementsToHide = [
+        IMAGE_ELEM,
+        TEMPERATURE_ELEM,
+        COUNTRY_ELEM,
+        DESCRIPTION_ELEM,
+        FOOTER_INFO
+    ];
+    
+    elementsToHide.forEach(element => {
+        element.classList.add("hide");
+    })
+
+    ERROR_IMAGE_ELEM.classList.remove("hide");
+    CITY_ELEM.textContent = "City not found";
 }
 
 function clearInput() {
