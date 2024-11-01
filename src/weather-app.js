@@ -1,4 +1,5 @@
 const INPUT_ELEM = document.querySelector(".search__input");
+const BUTTON_ELEM = document.querySelector(".clear__button");
 const IMAGE_ELEM = document.querySelector(".weather__img");
 const ERROR_IMAGE_ELEM = document.querySelector(".error__image");
 const TEMPERATURE_ELEM = document.querySelector(".weather__temperature");
@@ -81,8 +82,23 @@ function hideElements() {
     CITY_ELEM.textContent = "City not found";
 }
 
+function changeButtonIcon() {
+    const magnifyingGlassIcon = document.querySelector(".fa-magnifying-glass");
+    const clearInputIcon = BUTTON_ELEM;
+
+    if (INPUT_ELEM.value === "") {
+        clearInputIcon.classList.add("hide");
+        magnifyingGlassIcon.classList.remove("hide");
+        return
+    }
+
+    magnifyingGlassIcon.classList.add("hide");
+    clearInputIcon.classList.remove("hide");
+}
+
 function clearInput() {
     INPUT_ELEM.value = "";
+    changeButtonIcon();
 }
 
 function onKeyUp(event) {
@@ -95,6 +111,8 @@ function onKeyUp(event) {
 }
 
 function run() {
+    BUTTON_ELEM.addEventListener("click", clearInput);
+    INPUT_ELEM.addEventListener("input", changeButtonIcon);
     INPUT_ELEM.addEventListener("keyup", onKeyUp);
     getData();
 }
